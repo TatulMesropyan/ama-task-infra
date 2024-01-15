@@ -24,15 +24,6 @@ resource "aws_s3_bucket_website_configuration" "frontend" {
     key = "index.html"
   }
 }
-resource "aws_s3_bucket_cors_configuration" "frontend" {
-  bucket = aws_s3_bucket.frontend.id
-
-  cors_rule {
-    allowed_methods = ["GET"]
-    allowed_origins = ["*"]
-  }
-}
-
 resource "aws_s3_bucket_public_access_block" "frontend" {
   bucket = aws_s3_bucket.frontend.id
 
