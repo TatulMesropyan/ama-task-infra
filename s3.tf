@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "frontend" {
   bucket        = "${local.resource_prefix}-frontend"
   force_destroy = false
   tags = {
-    Name = "ama-task-frontend"
+    Name = "${local.resource_prefix}-task-frontend"
   }
 }
 resource "aws_s3_bucket_cors_configuration" "frontend" {
@@ -43,6 +43,7 @@ resource "aws_s3_bucket_policy" "frontend" {
              "Effect": "Allow",
              "Action": ["s3:GetObject"],
              "Resource": "${aws_s3_bucket.frontend.arn}/*",
+             "Principal": "*"
          }
      ]
 }
