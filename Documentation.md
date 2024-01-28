@@ -36,7 +36,7 @@ An S3 bucket is created to host the static frontend files for the Bank Customer 
 
 ## Terraform Backend Configuration
 
-The Terraform script is configured to store its state remotely in an S3 bucket (`ama-test-task-terraform-state`) in the `eu-central-1` region.
+The Terraform script is configured to store its state remotely in an S3 bucket (`test-terraform-state`) in the `eu-central-1` region.
 
 ## Prerequisites
 
